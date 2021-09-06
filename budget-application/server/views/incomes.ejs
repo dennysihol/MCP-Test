@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Incomes | Budget Application'}); %>
+<body>
+    <%- include('partials/nav'); %>
+    <div style="height: 100%; width: 100%; background-color: aquamarine;">
+        <br><br><br>
+        <h1 style="padding-left: 20px;">List Income</h1>
+    </div>
+    <div style="padding-left: 20px; padding-right: 20px;">
+        <br><br>
+        <a href="/incomes/add"><input type="button" value="Add Income"></a> 
+        <br><br><br>
+        <table id="incomes">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+            <% data.forEach(el => { %>
+            <tr>
+                <td><%= el.title %></td>
+                <td><%= el.description %></td>
+                <td><%= el.value %></td>
+                <td><a href="incomes/edit/<%= el.id %>"><input type="button" value="Edit"></a>&nbsp;&nbsp;
+                    &nbsp;&nbsp;<a href="incomes/delete/<%= el.id %>"><input type="button" value="Delete" onclick="return confirm('Are you sure?')"></a>&nbsp;&nbsp;
+                </td>
+            </tr>
+            <% }) %>
+        </table>   
+    </div>
+    
+
+</body>
+</html>

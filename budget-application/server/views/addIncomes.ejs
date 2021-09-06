@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Incomes | Budget Application'}); %>
+<body>
+    <%- include('partials/nav'); %>
+    <div style="height: 100%; width: 100%; background-color: aquamarine;">
+        <br><br><br>
+        <h1 style="padding-left: 20px;">Add Income</h1>
+    </div>
+    <div style="padding-left: 20px;">  
+        <div class="form"></div>
+            <form action="/incomes/add" method="POST">
+                <label for="title">Title</label><br>
+                <input type="text" id="title" name="title" placeholder="e.g: Gaji"><br><br>
+    
+                <label for="description">Description</label><br>
+                <input type="text" id="description" name="description" placeholder="e.g: Gaji Bulan Juni"><br><br>
+    
+                <label for="value">Value</label><br>
+                <input type="text" id="value" name="value" placeholder="e.g: 1000000"><br><br>
+                
+                <input type="submit" value="Save">&nbsp;&nbsp;<a href="/incomes"><input type="button" value="Cancel" action="/incomes"></a>
+            </form>
+          </div>  
+    </div>
+    
+
+</body>
+</html>
